@@ -23,11 +23,11 @@ $("#formulario1").validate({
         },
         "txtContrasenia":{
             required: 'Ingresa la contrasenia!!',
-            minlength: 'Minimo 5 caracteres'
+            minlength: 'Mínimo 5 caracteres'
         },
         "txtRepetirContra": {
             required: 'Repita el Password!!',
-            equalTo: ' deben ser iguales!!!!'
+            equalTo: 'Deben ser iguales'
                     }        
 
     }
