@@ -1,0 +1,42 @@
+{% extends 'Registro/base.html' %} 
+
+{% block titulo_principal %}
+
+<div id=titulo_pagina>
+    Lista de Departamentos
+</div>
+{% endblock %} 
+
+{% block content %} 
+
+
+    <h3>Listado de Departamentos</h3>
+
+{% if object_list %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Stock</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for departamento in object_list %}
+        <tr>
+            <th scope="row">{{ departamento.nombre }} </th>
+            <td>{{ departamento.tipo }}</td>
+            <td>${{ departamento.stock }}</td>
+
+            <td><a class="btn btn-primary" href="{% url 'edit_depto' departamento.id %}">Editar</a></td>
+            <td><a class="btn btn-danger" href="{% url 'del_depto' departamento.id %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+    <h1>No hay registros de Departamentos</h1>
+{% endif %} {% endblock %}
