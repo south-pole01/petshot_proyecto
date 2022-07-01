@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home Page{% endblock title %}
+
+{% block content %} 
+    {% if user.is_authenticated %}
+        <img src="{% static 'images/feliz.jpg' %}" alt="home">
+        <p>Bienvenido a nuestra tienda de mascotas</p>
+        <p>Tu nombre es - {{user.first_name}} {{user.last_name}}</p>
+        <br><br>
+    {% endif %}
+
+    <section>
+        <div class="col-xs-12 col-md-12 col-lg-12">
+        <div class="principal"> 
+            <div id="contenedorAnimal">
+                <img class="img-fluid" src="{% static 'images/animales.png' %}" alt="animales">
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="contenedor-inferior">
+        <div class="col-xs-6 col-md-4 col-lg-3"></div>
+        <aside class="lateral_1">
+            <h1><a href="{% url 'prod_list' %}">ACCESORIOS</a></h1>
+            <h5>PARA TU MASCOTA</h5>
+            <p>Encuentra en nuestra tienda mas de 2.000 productos para hacer feliz a tu mascota.</p>
+            <img src="static/images/tienda2.jpg" alt="perrito rescatado" />
+        </aside>
+        
+        <aside class="lateral_2">
+            <img src="{% static 'images/dona.jpg' %}" alt="financiamiento" />
+            <h1><a href="#">DONA</a></h1>
+            <h5>A LA FUNDACIÓN SIN FINES DE LUCRO</h5>
+            <p>Puedes donar directamente a la fundación hermana de nuestra tienda para ir en ayuda de animales.</p>
+        </aside><br>
+    </div>
+{% endblock content %}

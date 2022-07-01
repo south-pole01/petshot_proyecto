@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+
+{% block titulo_principal %}
+
+<div id=titulo_pagina>
+    Lista de Productos
+</div>
+{% endblock %} 
+
+{% block content %} 
+
+
+    <h3>Listado de Productos</h3>
+
+{% if object_list %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Departamento</th>
+            <th>Stock</th>
+            <th>Comentario</th>
+            <th>Precio</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in object_list %}
+        <tr>
+            <th scope="row">{{ producto.nombre }} </th>
+            <td>{{ producto.departamento }}</td>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.comentario }}</td>
+            <td>{{ producto.precio }}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+    <h1>No hay registros de Departamentos</h1>
+{% endif %} {% endblock %}

@@ -1,0 +1,89 @@
+.header {
+    background-color: rgb(249, 232, 164);
+    display: flex;
+    justify-content: space-around;
+}
+.p{
+    color: blue;
+
+} 
+.navegacion {
+    float: right;
+}
+ 
+#contenedorAnimal {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+    background-color: rgb(249, 232, 164);
+}
+ 
+ 
+.contenido {
+    display: flex;
+    background-color: rgb(250, 255, 173);
+    color: rgb(10, 31, 220);
+    width: 100%;
+    padding: 20px;
+    font-family: verdana;
+    font-weight: bold;
+    text-align: center;
+}
+ 
+.principal {
+    background-color: rgb(249, 232, 164);
+}
+  
+.lateral_1, .lateral_2 {
+    width: 50%;
+    height: 500px;
+    padding: 30px;
+    background-color: white;
+    font-family: verdana;
+}
+ 
+.lateral_1 {
+    text-align: right;
+}
+ 
+.lateral_2 img {
+    width: 50%;
+}
+ 
+.contenedor-inferior {
+    display: flex;
+}
+ 
+.footer {
+    text-align: center;
+}
+
+form{
+    background-color: rgb(192, 255, 234);
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1%;
+ 
+}
+
+.contenedor-adopcion{
+    text-align: left;
+    background-color: rgb(192, 255, 234);
+}
+
+.volver{
+    text-align: center;
+    background-color: rgb(192, 255, 234);
+    
+}
+ 
+@media screen and (max-width:720px) {
+    .header {
+        flex-direction: column;
+    }
+    .footer {
+        display: none;
+    }
+}

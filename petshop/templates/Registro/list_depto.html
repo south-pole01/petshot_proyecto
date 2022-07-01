@@ -1,4 +1,4 @@
-{% extends 'Registro/base.html' %} 
+{% extends 'base.html' %} 
 
 {% block titulo_principal %}
 
@@ -28,13 +28,14 @@
         <tr>
             <th scope="row">{{ departamento.nombre }} </th>
             <td>{{ departamento.tipo }}</td>
-            <td>${{ departamento.stock }}</td>
+            <td>{{ departamento.stock }}</td>
 
             <td><a class="btn btn-primary" href="{% url 'edit_depto' departamento.id %}">Editar</a></td>
             <td><a class="btn btn-danger" href="{% url 'del_depto' departamento.id %}">Eliminar</a></td>
         </tr>
         {% endfor %}
     </tbody>
+    <td><a class="btn btn-primary" href="{% url 'add_departamento'%}">Agregar departamento</a></td>
 </table>
 
 {% else %}
