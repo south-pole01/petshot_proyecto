@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+<h1 class="display-3">Animales en Adopción</h1>
+<hr>
+<a class="btn" role="button" href="{% url 'adopta_form' %}">Agregar</a>
+<hr>
+
+{% if not object_list %}
+<h1>No hay registro de animales en adopción</h1>
+<br><br><br><br><br><br><br><br>
+{% else %}
+<table class="table table-bordered">
+    <thead>
+         <tr>
+             <td>Fotografia</td>
+             <td>Nombre Mascota</td>
+             <td>Edad</td>
+             <td>Ciudad</td>
+             <td>Email</td>
+             <td>Animal</td>
+         </tr>
+    </thead>
+    <tbody>  
+         {% for adopta in object_list %}      
+         <tr>
+             <td><img src= ../../static/images/{{ adopta.fotografia }} style="width: 100px;"/> </td>
+             <td>{{ adopta.nombreMascota }}</td>
+             <td>{{ adopta.edad }}</td>
+             <td>{{ adopta.ciudad }}</td>
+             <td>{{ adopta.email }}</td>
+             <td>{{ adopta.tipo_animal }}</td>
+
+             {% if user.is_superuser %}
+             <td>
+                 <a class="btn btn-primary" href="{% url 'adopta_update' adopta.id%}">  Editar  </a>
+                 <a class="btn btn-danger" href="{% url 'adopta_borrar' adopta.id%}">Eliminar</a>
+             </td>
+             {% endif %}
+             
+         </tr>
+         {% endfor %}                                
+    </tbody>
+</table>
+{% endif %}
+
+</div>
+
+{% endblock %}

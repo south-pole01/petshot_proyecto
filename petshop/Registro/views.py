@@ -83,8 +83,8 @@ def producto_element(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
     
     elif request.method == 'PUT': 
-        carrera_new = JSONParser().parse(request) 
-        serializer = ProductoSerializer(producto, data=carrera_new) 
+        producto_new = JSONParser().parse(request) 
+        serializer = ProductoSerializer(producto, data=producto_new) 
         if serializer.is_valid(): 
             serializer.save() 
             return Response(serializer.data, status=status.HTTP_200_OK)

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Adopta{% endblock title %}
+
+{% block content %} 
+        <h4>Acá podrás buscar entre nuestro socios personas que quieran adoptar mascotas.</h4>
+
+        <button class="btn btn-danger" onclick="traer()">Busca!</button>
+        <div class="mt-5" id="contenido"></div>
+    <script src="{% static 'js/randomuser.js' %}"></script>
+{% endblock content %}

@@ -25,7 +25,7 @@
                             <a class="nav-link" href="{% url 'prod_list' %}">Tienda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% static 'adopta.html' %}">Adopta</a>
+                            <a class="nav-link" href="{% url 'adopcion' %}">Buscar familia</a>
                         </li>
                         {% if not user.is_authenticated %}                          
                         <li class="nav-item">
@@ -37,6 +37,10 @@
                         {% endif %}
                         
                         {% if user.is_authenticated %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'adopta_list' %}">Adopta</a>
+                        </li>
 
                         {% if user.is_superuser %}
                         <li class="nav-item"><a style="color: red;" href="{% url 'list_depto' %}">Departamentos </a></li>

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Registro',
     'Usuario',
+    'Adopta',
     'rest_framework',
 ]
 
